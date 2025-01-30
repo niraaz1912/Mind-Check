@@ -13,15 +13,36 @@ def create_table():
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS Resource (
+        CREATE TABLE IF NOT EXISTS Tips (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             category VARCHAR(50) NOT NULL,
             tips TEXT,
-            videos TEXT,
-            articles TEXT,
-            links TEXT
         );
+                   
+        CREATE TABLE IF NOT EXISTS Videos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            category VARCHAR(50) NOT NULL,
+            title TEXT,
+            url TEXT,
+        );
+                   
+         CREATE TABLE IF NOT EXISTS Links (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            category VARCHAR(50) NOT NULL,
+            title TEXT,
+            url TEXT,
+        );
+                   
+        CREATE TABLE IF NOT EXISTS Articles (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        category VARCHAR(50) NOT NULL,
+        title TEXT,
+        url TEXT,
+        );
+                   
+                   
     ''')
+    
     conn.commit()
     conn.close()
 
@@ -43,7 +64,10 @@ def get_resources(category):
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    cursor.execute('SELECT tips, videos, articles, links FROM Resource WHERE category = ?', (category,))
+    cursor.execute('SELECT tips FROM Tips WHERE category = ?', (category,))
+    cursor.execute('SELECT title, url FROM Videos WHERE category = ?', (category,))
+    cursor.execute('SELECT title, url FROM Links WHERE category = ?', (category,))
+    cursor.execute('SELECT title, url FROM Articles WHERE category = ?', (category,))
     resources = cursor.fetchall()
     
     conn.close()
