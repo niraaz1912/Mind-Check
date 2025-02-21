@@ -36,22 +36,21 @@ def classify(text):
 
 
 
-resources = {
-    "Anxiety": "https://www.adaa.org/understanding-anxiety",
-    "Depression": "https://www.nimh.nih.gov/health/topics/depression",
-    "Suicidal": "https://suicidepreventionlifeline.org/",
-    "Stress": "https://www.apa.org/topics/stress",
-    "Bipolar": "https://www.nimh.nih.gov/health/topics/bipolar-disorder",
-    "Personality disorder": "https://www.nhs.uk/mental-health/conditions/personality-disorder/",
-    "Normal": "You're doing well! Keep maintaining good mental health."
-}
+# resources = {
+#     "Anxiety": "https://www.adaa.org/understanding-anxiety",
+#     "Depression": "https://www.nimh.nih.gov/health/topics/depression",
+#     "Suicidal": "https://suicidepreventionlifeline.org/",
+#     "Stress": "https://www.apa.org/topics/stress",
+#     "Bipolar": "https://www.nimh.nih.gov/health/topics/bipolar-disorder",
+#     "Personality disorder": "https://www.nhs.uk/mental-health/conditions/personality-disorder/",
+#     "Normal": "You're doing well! Keep maintaining good mental health."
+# }
 
-# Example Usage
-sample_text = "i am jobless"
-predicted_label, probabilities = classify(sample_text)
+# # Example Usage
+# sample_text = "i am jobless"
+# predicted_label = classify(sample_text)
 
-print(f"Predicted Mental Health Condition: {predicted_label}")
-print(f"Probabilities: {probabilities}")
+# print(f"Predicted Mental Health Condition: {predicted_label}")
 
-# Provide mental health support
-print(f"Resource: {resources[predicted_label]}")
+# # Provide mental health support
+# print(f"Resource: {resources[predicted_label]}")
