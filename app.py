@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, redirect, url_for
 from classify import classify  # Import your classification function
 import sqlite3
+from populateDB import populateDB
 
 app = Flask(__name__)
 
@@ -44,6 +45,7 @@ def create_table():
     ''')
     
     conn.commit()
+    populateDB(conn)  # Populate tables with resources
     conn.close()
 
 create_table()  # Ensure table is created when the app starts
