@@ -18,3 +18,19 @@
     font-size: 40px;
     color: white;
 }
+.header-strategies{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgb(13, 11, 8);
+    height: 90px;
+
+    z-index: 1000;
+}
