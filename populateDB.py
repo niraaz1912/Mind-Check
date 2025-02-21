@@ -11,9 +11,9 @@ def populateDB(conn):
         print("Tips table populated successfully.")
 
         # Populate Videos table
-        df_videos = pd.read_excel('Videos.xlsx')
+        df_videos = pd.read_excel('Video.xlsx')
         # Ensure that your Excel file has the columns: 'category', 'title', and 'url'
-        df_videos.to_sql('Videos', conn, if_exists='append', index=False)
+        df_videos.to_sql('Video', conn, if_exists='append', index=False)
         print("Videos table populated successfully.")
 
         # Populate Links table
@@ -23,9 +23,9 @@ def populateDB(conn):
         print("Links table populated successfully.")
 
         # Populate Articles table
-        df_articles = pd.read_excel('Articles.xlsx')
+        df_articles = pd.read_excel('Article.xlsx')
         # Ensure that your Excel file has the columns: 'category', 'title', and 'url'
-        df_articles.to_sql('Articles', conn, if_exists='append', index=False)
+        df_articles.to_sql('Article', conn, if_exists='append', index=False)
         print("Articles table populated successfully.")
 
     except Exception as e:

@@ -6,7 +6,7 @@ from populateDB import populateDB
 app = Flask(__name__)
 
 def get_db_connection():
-    conn = sqlite3.connect('database.db')  
+    conn = sqlite3.connect('mindCheckDB.db')  
     conn.row_factory = sqlite3.Row  # Return results as dictionaries
     return conn
 
@@ -17,33 +17,33 @@ def create_table():
         CREATE TABLE IF NOT EXISTS Tips (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             category VARCHAR(50) NOT NULL,
-            tips TEXT,
-        );
-                   
+            tips TEXT
+        );      
+    ''')
+    cursor.execute('''
         CREATE TABLE IF NOT EXISTS Videos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            category VARCHAR(50) NOT NULL,
-            title TEXT,
-            url TEXT,
-        );
-                   
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                category VARCHAR(50) NOT NULL,
+                title TEXT,
+                url TEXT
+            );
+    ''')
+    cursor.execute('''                   
          CREATE TABLE IF NOT EXISTS Links (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             category VARCHAR(50) NOT NULL,
             title TEXT,
-            url TEXT,
+            url TEXT
         );
-                   
-        CREATE TABLE IF NOT EXISTS Articles (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        category VARCHAR(50) NOT NULL,
-        title TEXT,
-        url TEXT,
-        );
-                   
-                   
     ''')
-    
+    cursor.execute('''              
+        CREATE TABLE IF NOT EXISTS Articles (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            category VARCHAR(50) NOT NULL,
+            title TEXT,
+            url TEXT
+        );    
+    ''')
     conn.commit()
     populateDB(conn)  # Populate tables with resources
     conn.close()
@@ -65,20 +65,37 @@ def classify_and_redirect():
 def get_resources(category):
     conn = get_db_connection()
     cursor = conn.cursor()
-    
+
+    # Fetch data separately from each table
     cursor.execute('SELECT tips FROM Tips WHERE category = ?', (category,))
-    cursor.execute('SELECT title, url FROM Videos WHERE category = ?', (category,))
+    tips = [row[0] for row in cursor.fetchall()]  # Extract tips from tuples
+
+    cursor.execute('SELECT title, url FROM Video WHERE category = ?', (category,))
+    videos = [{'title': row[0], 'url': row[1]} for row in cursor.fetchall()]
+
     cursor.execute('SELECT title, url FROM Links WHERE category = ?', (category,))
-    cursor.execute('SELECT title, url FROM Articles WHERE category = ?', (category,))
-    resources = cursor.fetchall()
-    
+    links = [{'title': row[0], 'url': row[1]} for row in cursor.fetchall()]
+
+    cursor.execute('SELECT title, url FROM Article WHERE category = ?', (category,))
+    articles = [{'title': row[0], 'url': row[1]} for row in cursor.fetchall()]
+
     conn.close()
-    
-    if not resources:
+
+    # Check if any data was found
+    if not (tips or videos or links or articles):
         return jsonify({'message': 'No resources found for this category'}), 404
 
-    result = [{'tips': row['tips'], 'videos': row['videos'], 'articles': row['articles'], 'links': row['links']} for row in resources]
-    return jsonify({'category': category, 'resources': result})
+    # Construct response
+    result = {
+        'category': category,
+        'tips': tips,
+        'videos': videos,
+        'links': links,
+        'articles': articles
+    }
+
+    return jsonify(result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
