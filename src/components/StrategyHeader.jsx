@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate,withRouter } from 'react-router-dom'
 import BIRDS from 'vanta/dist/vanta.birds.min';
 import '../styles/header.css'
 
@@ -23,23 +23,31 @@ class StrategyHeader extends React.Component {
     }
     
     componentWillUnmount() {
+        console.log(this.vantaEffect)
       if (this.vantaEffect) {
         this.vantaEffect.destroy();
       }
     }
-    
+    goHome = () => {
+        this.props.history.push('/'); // Use history.push to navigate
+    }
+
     render() {
       return (
         <header id="header-strategies" ref={this.vantaRef}>
           <div className="header-strategies">
-            <button className="site-logo">MindCheck</button>
+            <button className="site-logo" onClick={()=>this.props.navigate('/')}>MindCheck</button>
           </div>
         </header>
       );
     }
   }
-  
-  export default StrategyHeader
+  // Functional Wrapper to pass navigate function
+function StrategyHeaderWrapper() {
+    const navigate = useNavigate();
+    return <StrategyHeader navigate={navigate} />;
+}
+  export default StrategyHeaderWrapper
   
 
 // function StrategyHeader() {
