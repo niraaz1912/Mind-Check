@@ -4,9 +4,10 @@ import '../styles/header.css'
 function StrategyHeader() {
   return (
       <header className='header-strategies'> 
-          <Link className="site-logo" to='/' >
+          {/*<Link className="site-logo" to='/' >
               MindCheck
-          </Link>
+          </Link>8*/}
+          <button className="site-logo">MindCheck</button>
       </header>
     )
 }

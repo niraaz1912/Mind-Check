@@ -1,3 +1,30 @@
-.strategy-main{
+.host-nav{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+
+    position: fixed;
+    
     margin-top: 90px;
+    left: 0;
+    right: 0;
+
+    background-color: pink;
+    height: 90px;
+
+    z-index: 900;
+}
+.strategy-link{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.strategy-link:hover{
+    text-decoration: underline;
+}
+.strategy-link:active{
+    color: rgb(191, 143, 0);
+    text-decoration: underline;
 }

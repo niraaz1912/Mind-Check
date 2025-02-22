@@ -13,7 +13,7 @@ function Home() {
         console.log(text)
         const data = postFeelingInfo(text)
         console.log(data);
-        //navigate('/strategies')
+        navigate('/strategies')
     }
     return (
     <div className='main-content'>

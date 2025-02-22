@@ -4,6 +4,10 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Strategies from './components/Strategies';
+import Tips from './components/Tips';
+import Articles from './components/Articles';
+import Videos from './components/Videos';
+import Organizations from './components/Organizations';
 function App() {
   /*return (
     <div className="App">
@@ -28,7 +32,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
-          <Route path='strategies' element={<Strategies/>}/>
+          <Route path='strategies' element={<Strategies/>}>
+            <Route index element={<Tips/>}/>
+            <Route path='articles'element={<Articles/>}/>
+            <Route path='videos'element={<Videos/>}/>
+            <Route path='organizations'element={<Organizations/>}/>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

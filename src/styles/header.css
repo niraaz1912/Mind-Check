@@ -47,6 +47,18 @@
 
     z-index: 1000;
 }
+
+.site-logo{
+  background-color: rgb(204, 122, 0);
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px 20px;
+}
+.site-logo:hover{
+  border: 3px solid black;
+  
+}
   
 
   
