@@ -2,69 +2,99 @@
     display: flex;
     flex-direction: column;
     /*background-color: rgb(0, 166, 255);*/
-    background-color: rgb(251, 197, 210);
+    /* background-color: rgb(251, 197, 210); */
+    background-image: linear-gradient(#07192f, rgb(251, 197, 210));
 }
 /*introduction section*/
 .text-container{
-    height: 600px;
+    height: 300px;
     width: 100%;
     background-color: white;
-    /*background-image: url('../images/mental-health.jpg');
-    background-size: cover;
-    background-position: center;*/
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Add spacing inside */
+    border: 1px solid #ccc; /* Subtle border */
+
 }
 img{
     height: 100%;
     width: 100%;
 }
 /*input section*/
-.input-section{
+.input-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
-    color: black;
-    padding: 50px 0px;
+    padding: 50px 0;
+    font-family :Georgia, 'Times New Roman', Times, serif;
+    color: #ffdf5ef0;
+    text-shadow: 1px 1px 2px #07192f, 0 0 1em #07192f, 0 0 0.2em #07192f;
+}
 
+/* FLEX CONTAINER for input and button */
+.input-container {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+    width: 100%; /* Ensures enough space */
+    max-width: 600px;
     
 }
-.feeling-input-box{
-    font-size: 17px;
-    padding: 10px 15px;
-    width: 80%;
-    min-height: 60px;
+
+/* Input Box */
+.feeling-input-box {
+    flex: 1; /* Takes up remaining space */
+    width: 50%;
+    background-color: transparent;
+    color: white;
+    padding: 15px;
+    border: 2px solid white;
     border-radius: 10px;
-    border: 1px solid black;
+    /* box-shadow: 0.5px 0.5px 0.5px rgb(251, 197, 210), 0 0 1em rgb(251, 197, 210), 0 0 0.2em rgb(251, 197, 210); */
 }
-.submit-button{
-    background-color: rgba(255, 176, 29, 0.844);
+
+.feeling-input-box::placeholder {
+    color: rgb(251, 197, 210);
+}
+
+.feeling-input-box:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0.5px 0.5px 0.5px rgb(251, 197, 210), 0 0 1em rgb(251, 197, 210), 0 0 0.2em rgb(251, 197, 210);
+
+}
+
+/* Submit Button */
+.submit-button {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
     font-size: 16px;
     font-weight: bold;
-   
-    padding: 10px 25px 10px 25px;
-    
+    padding: 10px 20px;
     text-align: center;
-    border: none;
-    border-radius: 20px;
-
-    box-shadow: 2px 2px 5px 2px #888888;
-
-    margin-top: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 1px white, 0 0 1em white, 0 0 0.2em white;
 }
 
-.submit-button:hover{
-    background-color: rgba(255, 166, 0, 0.844);
+/* Button Hover */
+.submit-button:hover {
+    background-color: rgba(251, 197, 210, 0.2);
 }
-.submit-button:active{
-    background-color: rgba(255, 166, 0, 0.923);
-}
-.submit-button:disabled{
-    background-color: rgba(255, 176, 29, 0.844);
+
+/* Disabled Button */
+.submit-button:disabled {
+    border-color: rgba(251, 197, 210, 0.4);
+    color: rgba(251, 197, 210, 0.4);
     cursor: not-allowed;
 }
-.submit-button:disabled:hover, .submit-button:disabled:active{
-    background-color: rgba(255, 176, 29, 0.844);
+
+.submit-button:active{
+    background-color: #ffdf5ef0;
 }
+
 
 h2{
     font-family :Georgia, 'Times New Roman', Times, serif;

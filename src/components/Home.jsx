@@ -19,7 +19,7 @@ function Home() {
     <div className='main-content'>
         {/*<Intro/>*/}
         <section className='input-section'>
-            <h2>Briefly tell us about how you feel</h2>
+            <h2>Tell us how you feel</h2>
             <input className='feeling-input-box' placeholder='Start here...' type="text" onChange={handleChange}></input>
             <button className='submit-button' onClick={()=>handleSubmit(text)} disabled={text?false:true}>Submit</button>
         </section>
