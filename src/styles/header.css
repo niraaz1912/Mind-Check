@@ -42,7 +42,7 @@
     left: 0;
     right: 0;
 
-    background-color: rgb(204, 122, 0);
+    background-image: linear-gradient(to right, purple, pink);
     height: 90px;
 
     z-index: 1000;
