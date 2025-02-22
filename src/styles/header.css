@@ -31,6 +31,22 @@
     font-size: 2rem; /* Adjust the size as needed (3rem is just an example) */
     color: #ffdf5ef0;
   }
+  .header-strategies{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgb(204, 122, 0);
+    height: 90px;
+
+    z-index: 1000;
+}
   
 
   

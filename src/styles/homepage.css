@@ -1,9 +1,8 @@
 .main-content{
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
     /*background-color: rgb(0, 166, 255);*/
-    background-color: rgba(250, 90, 255, 0.816);
+    background-color: rgb(251, 197, 210);
 }
 /*introduction section*/
 .text-container{
@@ -65,4 +64,8 @@ img{
 }
 .submit-button:disabled:hover, .submit-button:disabled:active{
     background-color: rgba(255, 176, 29, 0.844);
+}
+
+h2{
+    font-family :Georgia, 'Times New Roman', Times, serif;
 }
