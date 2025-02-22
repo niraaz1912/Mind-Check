@@ -6,9 +6,10 @@ function Organizations() {
   const {links }= detail
   const tipElements = links.map((link, index)=>
   <li key={index} className='content'>
-    <a href={`${link.url}`} target="_blank" rel="noopener noreferrer">
+    <a href={`${link.url}`} target="_blank" rel="noopener noreferrer" >
       {link.title}
     </a>
+    🔗
   </li>)
   return (
     <section className='strategies-container'>
