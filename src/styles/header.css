@@ -33,7 +33,7 @@
   }
   .header-strategies{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
 
@@ -41,22 +41,25 @@
     top: 0;
     left: 0;
     right: 0;
-
-    background-color: rgb(204, 122, 0);
+    color: rgb(251, 197, 210);
+  
+    /* background-image: linear-gradient(to right,pink, rgb(186, 53, 186), pink); */
     height: 90px;
 
     z-index: 1000;
 }
 
 .site-logo{
-  background-color: rgb(204, 122, 0);
+  background: transparent;
+  color: rgb(255, 209, 72);
   border: none;
-  font-size: 30px;
+  font-family :Georgia, 'Times New Roman', Times, serif;
+  font-size: 5rem;
   font-weight: bold;
   padding: 15px 20px;
 }
 .site-logo:hover{
-  border: 3px solid black;
+  cursor: pointer;
   
 }
   

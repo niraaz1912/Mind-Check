@@ -12,7 +12,7 @@
     right: 0;
 
     background-color: pink;
-    height: 90px;
+    height: 110px;
 
     z-index: 900;
 }
@@ -23,6 +23,7 @@
 }
 .strategy-link:hover{
     text-decoration: underline;
+    text-decoration-color: rgb(191, 143, 0);
 }
 .strategy-link:active{
     color: rgb(191, 143, 0);
