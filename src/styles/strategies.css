@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: #07192f;
   }
 .host-nav{
     
@@ -46,6 +46,22 @@ body {
     padding-left: 40px;
 }
 .content{
+    display: flex;
+    flex-direction: row;
+
     font-size: 20px;
     margin-bottom: 20px;
+}
+.clip-icon{
+    margin-left: 8px;
+}
+
+.external-link{
+    text-decoration: none;
+}
+.external-link:hover{
+    text-decoration: underline;
+}
+.external-link:active{
+    text-decoration: underline;
 }

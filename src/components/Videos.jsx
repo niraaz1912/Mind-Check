@@ -5,10 +5,10 @@ function Videos() {
   const {detail} = useOutletContext()
   const tipElements = detail.videos.map((video, index)=>
   <li key={index} className='content'>
-    <a href={`${video.url}`} target="_blank" rel="noopener noreferrer" >
+    <a href={`${video.url}`} target="_blank" rel="noopener noreferrer" className='external-link'>
       {video.title } 
     </a>
-    🔗
+    <div className='clip-icon'>🔗</div>
   </li>)
   return (
     <section className='strategies-container'>

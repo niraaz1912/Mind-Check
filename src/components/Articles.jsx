@@ -5,10 +5,10 @@ function Articles() {
   const {detail} = useOutletContext()
   const tipElements = detail.articles.map((article, index)=>
   <li key={index } className='content'>
-    <a href={`${article.url}`} target="_blank" rel="noopener noreferrer" >
+    <a href={`${article.url}`} target="_blank" rel="noopener noreferrer" className='external-link'>
       {article.title}
     </a>
-    🔗
+    <div className='clip-icon'>🔗</div>
   </li>)
   return (
     <section className='strategies-container'>
