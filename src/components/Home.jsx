@@ -11,9 +11,9 @@ function Home() {
       };
     const handleSubmit = ()=>{
         console.log(text)
-        const data = postFeelingInfo(text)
-        console.log(data);
-        //navigate('/strategies')
+        //const data = postFeelingInfo(text)
+        //console.log(data);
+        navigate('/strategies')
     }
     return (
     <div className='main-content'>
