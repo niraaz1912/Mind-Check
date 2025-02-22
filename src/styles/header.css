@@ -25,11 +25,13 @@
     font-family :Georgia, 'Times New Roman', Times, serif;
     font-size: 5rem; /* Adjust the size as needed (3rem is just an example) */
     font-weight: 700;
+    text-shadow: 1px 1px 2px #07192f, 0 0 1em #07192f, 0 0 0.2em #07192f;
   }
   .description{
     font-family :Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem; /* Adjust the size as needed (3rem is just an example) */
     color: #ffdf5ef0;
+    text-shadow: 1px 1px 2px #07192f, 0 0 1em #07192f, 0 0 0.2em #07192f;
   }
   .header-strategies{
     display: flex;
