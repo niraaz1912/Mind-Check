@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
+import Strategies from './components/Strategies';
 function App() {
   /*return (
     <div className="App">
@@ -27,7 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
-          <Route path='strategies' />
+          <Route path='strategies' element={<Strategies/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
