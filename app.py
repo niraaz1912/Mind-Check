@@ -2,9 +2,10 @@ from flask import Flask, request, jsonify, redirect, url_for
 from classify import classify  # Import your classification function
 import sqlite3
 from populateDB import populateDB
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 def get_db_connection():
     conn = sqlite3.connect('mindCheckDB.db')  
     conn.row_factory = sqlite3.Row  # Return results as dictionaries

@@ -6,7 +6,7 @@ export async function postFeelingInfo(inputValue){
         "Content-Type": "application/json"
     },
     //mode: 'no-cors',  
-    body: JSON.stringify({text: inputValue})})
+    body: JSON.stringify({text: inputValue })})
     if(!res.ok){
         throw {
             message: "Failed",
